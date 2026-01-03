@@ -1,38 +1,77 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
+.hidden { display: none !important; }
+
+/* Header */
 .main-header { background: #fff; padding: 15px 5%; border-bottom: 1px solid #e0e0e0; }
 .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
 .logo { display: flex; align-items: center; gap: 10px; }
 .brand-name { color: #003a63; font-weight: bold; }
-.nav-links a { text-decoration: none; color: #666; margin-left: 20px; font-size: 14px; }
-.btn-ticket { border: 1px solid #ccc; padding: 8px 15px; border-radius: 4px; }
+.nav-links a { text-decoration: none; color: #555; margin-left: 20px; font-size: 14px; cursor: pointer; }
+.btn-ticket { border: 1px solid #ccc; background: white; padding: 8px 15px; border-radius: 4px; margin-left: 20px; cursor: pointer; }
 
-/* SEÇÃO DO BANNER */
+/* Hero Section (Home) */
 .hero-section {
     height: 400px;
-    background-image: url('banner.png'); /* <--- O NOME DEVE SER IGUAL AO ARQUIVO NA PASTA */
+    background-image: url('banner.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    display: flex; justify-content: center; align-items: center;
+}
+.hero-content { text-align: center; color: white; }
+.hero-content h1 { font-size: 48px; font-weight: 800; }
+.search-box { background: white; display: flex; border-radius: 4px; overflow: hidden; margin-top: 20px; width: 600px; }
+.search-box input { flex: 1; border: none; padding: 18px; outline: none; }
+
+/* Tela de Registro (Fundo Cinza) */
+#register-page {
+    background-color: #f5f7f9;
+    min-height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    padding: 40px 0;
 }
 
-.hero-content { text-align: center; width: 100%; color: white; }
-.hero-content h1 { font-size: 48px; font-weight: 800; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-.hero-content p { font-style: italic; font-weight: bold; margin-bottom: 25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-
-.search-box { 
-    background: white; width: 60%; max-width: 600px; margin: 0 auto; 
-    display: flex; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.register-card {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
 }
-.search-box input { flex: 1; border: none; padding: 18px; outline: none; }
-.search-box button { background: white; border: none; padding: 0 20px; cursor: pointer; color: #999; }
 
-/* Grid de Cards */
-.knowledge-base { padding: 50px 0; text-align: center; background-color: #f9f9f9; }
-.cards-grid { display: grid; grid-template-columns: repeat(3, 280px); justify-content: center; gap: 30px; margin-top: 40px; }
-.card { background: white; padding: 50px; border-radius: 4px; border: 1px solid #eee; display: flex; justify-content: center; }
-.layers-icon span { display: block; width: 45px; height: 8px; background: #4a5568; border-radius: 2px; margin-bottom: 5px; }
+.register-card h2 { font-size: 24px; margin-bottom: 10px; color: #333; }
+.login-link { font-size: 14px; margin-bottom: 30px; color: #666; }
+.login-link a { color: #007bff; text-decoration: none; font-weight: bold; }
+
+.input-group { margin-bottom: 20px; text-align: left; }
+.input-group label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #333; }
+.input-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; outline: none; }
+
+.captcha-box {
+    border: 1px solid #d3d3d3;
+    background: #f9f9f9;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-radius: 3px;
+}
+
+.btn-register {
+    width: 100%;
+    background-color: #0d2a42; /* Cor azul escuro do botão Garena */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.analyst-link { margin-top: 25px; font-size: 14px; text-align: center; color: #666; }
+.analyst-link a { color: #007bff; text-decoration: none; }
