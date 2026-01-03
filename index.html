@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte Power Fire</title>
-    <link rel="icon" type="image/x-icon" href="PowerFire.png">
+    <title>Suporte Garena - Free Fire</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,39 +12,60 @@
         <div class="header-container">
             <div class="logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Garena_logo.svg" alt="Garena" width="100">
-                <span class="brand-name">Stumblecloud - Power Fire</span>
+                <span class="brand-name">Garena - Free Fire</span>
             </div>
             <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Knowledge base</a>
-                <a href="#" class="btn-ticket">Submit a ticket</a>
-                <a href="#">Login</a>
-                <a href="#">Sign up</a>
+                <a href="#" onclick="showPage('home')">Início</a>
+                <a href="#">Base de conhecimento</a>
+                <button class="btn-ticket">Enviar um ticket</button>
+                <a href="#">Entrar</a>
+                <a href="#" onclick="showPage('register')">Registrar</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>SUPORTE BRASIL</h1>
-            <p>ENCONTRE SUAS RESPOSTAS ABAIXO!</p>
-            <div class="search-box">
-                <input type="text" placeholder="Enter the search term here....">
-                <button type="button">🔍</button>
+    <main id="home-page">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>SUPORTE BRASIL</h1> <p>ENCONTRE SUAS RESPOSTAS ABAIXO!</p> <div class="search-box">
+                    <input type="text" placeholder="Enter the search term here...."> <button type="button">🔍</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        </main>
 
-    <main class="knowledge-base">
-        <h2>Knowledge base</h2>
-        <a href="#" class="view-articles">View all articles</a>
-        <div class="cards-grid">
-            <div class="card"><div class="layers-icon"><span></span><span></span><span></span></div></div>
-            <div class="card"><div class="layers-icon"><span></span><span></span><span></span></div></div>
-            <div class="card"><div class="layers-icon"><span></span><span></span><span></span></div></div>
+    <main id="register-page" class="hidden">
+        <div class="register-container">
+            <div class="register-card">
+                <h2>Inscreva-se no portal de suporte</h2> <p class="login-link">Já é um usuário? <a href="#">Entrar</a></p> <form>
+                    <div class="input-group">
+                        <label>Nome completo *</label> <input type="text" required>
+                    </div>
+                    <div class="input-group">
+                        <label>E-mail *</label> <input type="email" required>
+                    </div>
+                    
+                    <div class="captcha-box">
+                        <input type="checkbox" id="robot">
+                        <label for="robot">Não sou um robô</label>
+                        <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="recaptcha" width="30">
+                    </div>
+
+                    <button type="submit" class="btn-register">Registrar</button> </form>
+                <p class="analyst-link">Você é um analista? <a href="#">Fazer login aqui</a></p> </div>
         </div>
     </main>
 
+    <script>
+        function showPage(pageId) {
+            // Esconde todas as páginas
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('register-page').classList.add('hidden');
+            
+            // Mostra a página escolhida
+            document.getElementById(pageId + '-page').classList.remove('hidden');
+        }
+    </script>
 </body>
-
 </html>
+
